@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            background-color:aqua;
+            font-family: 'Open Sans', sans-serif;
+            padding-top: 0px;
+        }
+        .main-container{
+            background-color: white;
+            border-radius: 15px;
+            margin: auto;
+            width: 50%;
+            border: 3px solid green;
+            padding: 10px;
+
+
+        }
+
+        h1,h2,h3 {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        a, p {
+            color: blue;
+            font-weight: 800;
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        {% block content %}
+
+        {% endblock content%}
+    </div>
+</body>
+</html>

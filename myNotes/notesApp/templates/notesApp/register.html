@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'notesApp/base.html'%}
+{% block content %}
+
+<h1>Register</h1>
+
+<form method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <input type="submit" value="Register">
+</form>
+<a href="{% url 'login'%}">Have account? Please login</a>
+
+
+{% endblock content %}
+</body>
+</html>

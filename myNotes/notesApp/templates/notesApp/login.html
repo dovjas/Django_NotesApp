@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+         .login-btn {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            text-decoration: none;
+            color: blue;
+            border-radius:20px;
+            padding:5px 20px;
+            border: 2px solid aqua;}
+
+         .create-new-acc-btn{
+            text-decoration: none;
+            color: blue;
+            }
+
+          .login-page{
+             margin: 25px;
+            width: 350px;
+            height: 200px;
+             text-align: center;
+            }
+
+
+
+    </style>
+</head>
+<body>
+{% extends 'notesApp/base.html'%}
+{% block content %}
+
+<div class="login-page">
+<h1>Login Page</h1>
+
+<form method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <input type="submit" value="Login" class="login-btn">
+</form>
+<a href="{% url 'register'%}" class="create-new-acc-btn">Create a new account</a>
+
+{% endblock content %}
+</div>
+</body>
+</html>

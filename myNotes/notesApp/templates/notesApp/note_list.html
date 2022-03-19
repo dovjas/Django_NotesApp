@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+
+    <style>
+          .header{
+            display:flex;
+            justify-content:space-between;
+            color:black;
+            padding:10px;
+
+        }
+          a.new-note {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            text-decoration: none;
+            color: blue;
+            border-radius:20px;
+            padding:5px 120px;
+            border: 2px solid aqua;
+        }
+        .search-btn{
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            text-decoration: none;
+            color: blue;
+            border-radius:20px;
+            padding:5px 15px;
+            border: 2px solid aqua;
+        }
+        .input-field{
+           -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            text-decoration: none;
+            color: blue;
+            border-radius:20px;
+            padding:5px 40px;
+            border: 2px solid aqua;
+        }
+        .logout-btn, .login-btn {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            text-decoration: none;
+            color: blue;
+            border-radius:20px;
+            padding:5px 15px;
+            border: 2px solid aqua;
+        }
+        .view-btn, .update-btn{
+         -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            text-decoration: none;
+            color: blue;
+            border-radius:20px;
+            padding:5px 15px;
+            border: 2px solid aqua;
+        }
+        .delete-btn{
+         -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            text-decoration: none;
+            color: blue;
+            border-radius:20px;
+            padding:5px 15px;
+            border: 2px solid red;
+            }
+    </style>
+</head>
+<body>
+{% extends 'notesApp/base.html'%}
+{% block content %}
+
+<div class="header">
+    <div>
+        {% if request.user.is_authenticated %}
+        <!--    <p>{{request.user}}</p>-->
+            <a href="{% url 'logout'%}" class="logout-btn">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="login-btn">Login</a>
+        {% endif %}
+        <h2>User: {{request.user|title}}</h2>
+        <h3>Number of notes: {{count}} </h3>
+
+      <form method="get">
+        <input type="text" name="note-search-input" class="input-field">
+        <input type="submit" value="Search" class="search-btn">
+       </form>
+    </div>
+</div>
+
+<hr>
+    <a href="{% url 'note-create' %}" class="new-note">New Note</a>
+
+<div class="second-container">
+    <div class="table-container">
+<table>
+    <tr>
+        <th>My Notes</th>
+    </tr>
+    {% for note in notes %}
+    <tr>
+        <td>{{note.note_title}}</td>
+        <td><a href="{% url 'note-details' note.id %}" class="view-btn">View</a> </td>
+        <td><a href="{% url 'note-update' note.id %}" class="update-btn">Update</a> </td>
+        <td><a href="{% url 'note-delete' note.id %}" class="delete-btn">Delete</a> </td>
+    </tr>
+    {% empty %}
+    <p>No notes in list</p>
+    {% endfor %}
+</table>
+    </div>
+</div>
+{% endblock content %}
+</body>
+</html>
