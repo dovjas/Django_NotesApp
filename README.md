@@ -3,7 +3,7 @@ Python 3.8.9
 
 1.Front-End: Django;
 
-2.Back-End: Pyhton;
+2.Back-End: Python;
 
 3.DB: Mysql
 
