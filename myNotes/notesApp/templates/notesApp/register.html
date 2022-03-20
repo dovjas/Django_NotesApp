@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <style>
+        .register-btn{
+        -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            text-decoration: none;
+            color: blue;
+            border-radius:20px;
+            padding:5px 15px;
+            border: 2px solid aqua;
+        }
+    </style>
 </head>
 <body>
 {% extends 'notesApp/base.html'%}
@@ -13,7 +26,7 @@
 <form method="post">
   {% csrf_token %}
   {{form.as_p}}
-  <input type="submit" value="Register">
+  <input type="submit" value="Register" class="register-btn">
 </form>
 <a href="{% url 'login'%}">Have account? Please login</a>
 
