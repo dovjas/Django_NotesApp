@@ -1,7 +1,7 @@
 # Django_NotesApp
 Python 3.8.9 
 
-1.Front-End: Django;
+1.Front-End: Django/HTML/CSS
 
 2.Back-End: Python;
 
