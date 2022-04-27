@@ -1,10 +1,10 @@
-<h1>Note Taking App<h2>
+<h1>Note Taking App</h1>
 
 1.Front-End: HTML/CSS;
 2.Back-End: Python(Django);
 3.DB: Mysql
 
-Application features:
+<h2> Application features: </h2>
 
 - Login/Logout;
 - Registration;
