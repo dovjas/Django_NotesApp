@@ -1,13 +1,10 @@
-# Django_NotesApp
-Python 3.8.9 
+<h1>Note Taking App<h2>
 
-1.Front-End: Django/HTML/CSS
-
-2.Back-End: Python;
-
+1.Front-End: HTML/CSS;
+2.Back-End: Python(Django);
 3.DB: Mysql
 
-Application functionalities:
+Application features:
 
 - Login/Logout;
 - Registration;
