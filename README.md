@@ -2,7 +2,7 @@
 
 1.  Front-End: HTML/CSS;
 2.  Back-End: Python(Django);
-3.  DB: Mysql
+3.  DB: Mysql.
 
 <h2> Application features: </h2>
 
@@ -12,4 +12,4 @@
 - View note;
 - Edit note;
 - Delete note;
-- Upload an image;
+- Upload an image.
